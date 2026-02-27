@@ -1,0 +1,37 @@
+site_name: "Who's that guy?" 
+site_dir: site
+docs_dir: docs
+site_description: Dresklaw
+
+dev_addr: 'localhost:8111'
+site_url: https://dresklaw.github.io/
+
+theme:
+  name: 'material'
+  palette:
+    scheme: slate
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  language: 'en'
+  icon:
+    edit: material/pencil
+markdown_extensions:
+  - admonition
+  - footnotes
+  - toc:
+        permalink: True
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+plugins:
+  - search
+  - git-revision-date-localized     
+
+nav:
+  - 'About': 'index.md'

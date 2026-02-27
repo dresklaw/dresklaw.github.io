@@ -1,0 +1,23 @@
+---
+name: "Build docs"
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build docs
+        uses: ./.github/actions/build
+      - name: Deploy docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: site
+          force: false
+          clean-exclude: |
+            pr-preview
