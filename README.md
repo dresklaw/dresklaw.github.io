@@ -1,1 +1,3 @@
-# Some stuff about me
+# Here be dragons...
+
+... though really, you probably don't want to be here. Maybe [the built site](https://dresklaw.github.io)?
