@@ -4,7 +4,6 @@ docs_dir: docs
 site_description: Dresklaw
 
 dev_addr: 'localhost:8111'
-repo_url: https://github.com/dresklaw/dresklaw.github.io
 site_url: https://dresklaw.github.io/
 
 theme:
