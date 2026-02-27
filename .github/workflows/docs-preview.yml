@@ -1,0 +1,31 @@
+---
+name: "Build docs preview"
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+concurrency: preview-${{ github.ref }}
+permissions:
+  # Needed to update the preview branch.
+  contents: write
+  # Needed to write/maintain the comment
+  pull-requests: write
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build docs
+        uses: ./.github/actions/build
+      - name: Deploy docs preview
+        # XXX: Avoid attempting to do preview things across fork boundaries, as it doesn't work.
+        # See: https://github.com/rossjrw/pr-preview-action/pull/6
+        # Adapted from: https://github.com/orgs/community/discussions/26829#discussioncomment-3253575
+        if: ${{ github.event.pull_request.head.repo.full_name == github.event.pull_request.base.repo.full_name }}
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: site
