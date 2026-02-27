@@ -10,14 +10,11 @@ site_url: https://dresklaw.github.io/
 theme:
   name: 'material'
   palette:
-    primary: 'green'
-    accent: 'blue'
+    scheme: slate
   font:
     text: 'Roboto'
     code: 'Roboto Mono'
   language: 'en'
-  features:
-    - content.action.edit
   icon:
     edit: material/pencil
 markdown_extensions:
@@ -33,17 +30,9 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-extra_css:
-  - css/custom.css
 plugins:
   - search
   - git-revision-date-localized     
-extra:
-  font:
-    text: 'Roboto'
-    code: 'Roboto Mono'
-  palette:
-    primary: 'green'
-    accent: 'yellow'
+
 nav:
   - 'About': 'index.md'
